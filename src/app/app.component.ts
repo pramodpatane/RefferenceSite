@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'user';
-}
+  name = 'Felix ITs System'
+  info;
+  constructor(private formBuilder: FormBuilder){
+  this.info = this.formBuilder.group({
+  name: 'malik',
+  email: 'malik@yahoo.com',
+  contact: '9878663377'
+  })
+  }
+  onSubmit(values){
+  console.warn("Form Submit", values)
+  }
+  }
